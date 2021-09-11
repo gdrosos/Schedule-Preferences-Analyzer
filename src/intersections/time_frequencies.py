@@ -7,6 +7,11 @@ def get_data_directory():
     ROOT_DIR =  os.path.abspath(os.path.join(__file__ ,"../../.."))
     return os.path.join(ROOT_DIR, 'data/')
 
+def create_txt_directory():
+    if not os.path.exists(get_data_directory()+'txts'):
+        os.mkdir(get_data_directory()+'txts')
+
+create_txt_directory()
 DAYS = ['21:00', '22:00', '23:00', '20:00', '13:00έως16:00']
 combinations = [2, 3, 4, 5]
 with open(get_data_directory()+'txts/time_combinations.txt', 'wt',encoding='utf8') as out:

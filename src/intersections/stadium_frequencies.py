@@ -7,6 +7,11 @@ def get_data_directory():
     ROOT_DIR =  os.path.abspath(os.path.join(__file__ ,"../../.."))
     return os.path.join(ROOT_DIR, 'data/')
 
+def create_txt_directory():
+    if not os.path.exists(get_data_directory()+'txts'):
+        os.mkdir(get_data_directory()+'txts')
+
+create_txt_directory()
 DAYS = ['Φωκιανό', 'Renti', 'CitySoccerAιγάλεω/Eλαιώνας', 'ΑθλητικόΚέντροΓουδί', 'AFC', 'ΑθλητικόΓήπεδοΗλιούπολης']
 combinations = [2, 3, 4, 5, 6]
 with open(get_data_directory()+'txts\stadium_combinations.txt', 'wt',encoding='utf8') as out:
